@@ -1,82 +1,110 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
-
 body {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    height: 100vh;
+    background-color: #ffffff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding-bottom: 60px;
 }
-
-.login-card {
-    background: #ffffff;
-    padding: 30px 20px;
-    border-radius: 8px;
-    width: 350px;
+.login-wrapper {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo-container {
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
 }
-
-.insta-logo {
-    margin-bottom: 20px;
-    color: #bc1888;
+.logo-container img {
+    width: 175px;
+    height: 51px;
+    object-fit: contain;
 }
-
-h2 {
-    font-size: 22px;
-    color: #262626;
-    margin-bottom: 5px;
-}
-
-.subtitle {
-    font-size: 13px;
-    color: #8e8e8e;
-    margin-bottom: 25px;
-}
-
 form {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
-
 input {
-    background: #fafafa;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 8px;
+    background-color: #fafafa;
     border: 1px solid #dbdbdb;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 12px;
-    outline: none;
+    border-radius: 5px;
+    font-size: 14px;
 }
-
 input:focus {
+    outline: none;
     border-color: #a8a8a8;
 }
-
 button {
-    background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background-color: #0095f6;
+    color: #ffffff;
     border: none;
-    border-radius: 4px;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 5px;
-}
-
-button:hover {
-    opacity: 0.9;
-}
-
-.secure-text {
-    margin-top: 20px;
-    font-size: 11px;
-    color: #00376b;
+    border-radius: 8px;
     font-weight: 600;
-  }
+    font-size: 14px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #1877f2;
+}
+.or-divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+    color: #8e8e8e;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.or-divider::before, .or-divider::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background-color: #dbdbdb;
+}
+.or-divider::before { margin-right: 18px; }
+.or-divider::after { margin-left: 18px; }
 
+.fb-login {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.fb-login a {
+    text-decoration: none;
+    color: #385185;
+    font-weight: 600;
+    font-size: 14px;
+}
+.signup-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #dbdbdb;
+    padding: 15px 0;
+    color: #737373;
+}
+.signup-section a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 600;
+}
