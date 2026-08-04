@@ -474,6 +474,75 @@
             cursor: pointer;
         }
         button:hover {
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login • Instagram</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .login-wrapper {
+            width: 100%;
+            max-width: 350px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo-container img {
+            width: 175px;
+            height: 51px;
+            object-fit: contain;
+        }
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 8px;
+            background-color: #fafafa;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #a8a8a8;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            background-color: #0095f6;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        button:hover {
             background-color: #1877f2;
         }
         .or-divider {
@@ -506,16 +575,15 @@
             font-size: 14px;
         }
         .signup-section {
-            position: fixed;
-            bottom: 0;
-            left: 0;
             width: 100%;
+            max-width: 350px;
             background-color: #ffffff;
             text-align: center;
             font-size: 14px;
-            border-top: 1px solid #dbdbdb;
-            padding: 15px 0;
+            border: 1px solid #dbdbdb;
+            padding: 20px 0;
             color: #737373;
+            border-radius: 1px;
         }
         .signup-section a {
             color: #0095f6;
