@@ -133,21 +133,44 @@
         .login-box {
             background-color: #ffffff;
             border: 1px solid #dbdbdb;
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login • Instagram</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .login-box {
+            background-color: #ffffff;
+            border: 1px solid #dbdbdb;
             width: 350px;
             padding: 10px 0;
             margin-bottom: 10px;
         }
         .logo-container {
             text-align: center;
-            margin: 36px 0 20px 0;
+            margin: 36px 0 12px 0;
         }
-        /* इंस्टाग्राम जैसा शानदार स्टाइलिश टेक्स्ट लोगो */
-        .logo-container h1 {
-            font-family: 'Billabong', cursive, sans-serif;
-            font-size: 50px;
-            font-weight: normal;
-            color: #262626;
-            margin: 0;
+        /* असली ओरिजिनल लोगो इमेज के लिए */
+        .logo-container img {
+            width: 175px;
         }
         .form-container {
             padding: 0 40px;
@@ -212,7 +235,7 @@
             width: 350px;
             padding: 20px;
             text-align: center;
-            font-size: 14px;
+-            font-size: 14px;
         }
         .signup-box a {
             color: #0095f6;
@@ -225,9 +248,9 @@
 
     <div class="main-wrapper">
         <div class="login-box">
-            <!-- साफ और सुंदर इंस्टाग्राम टेक्स्ट लोगो -->
+            <!-- असली इंस्टाग्राम का इमेज लोगो -->
             <div class="logo-container">
-                <h1>Instagram</h1>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png" alt="Instagram">
             </div>
 
             <div class="form-container">
@@ -274,4 +297,3 @@
 
 </body>
 </html>
-
