@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 8px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.insta-logo {
+    margin-bottom: 20px;
+    color: #bc1888;
+}
+
+h2 {
+    font-size: 22px;
+    color: #262626;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #8e8e8e;
+    margin-bottom: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #a8a8a8;
+}
+
+button {
+    background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.secure-text {
+    margin-top: 20px;
+    font-size: 11px;
+    color: #00376b;
+    font-weight: 600;
+  }
+
